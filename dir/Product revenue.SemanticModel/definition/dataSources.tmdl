@@ -1,0 +1,5 @@
+dataSource b1375bc4-5131-4575-a9ed-5ed009c48231 = provider
+	connectionString: data source=jxkt4xphz2.database.windows.net;initial catalog=AdventureWorksDW2016-Australia;persist security info=True;encrypt=True;trustservercertificate=False
+	impersonationMode: impersonateCurrentUser
+	provider: System.Data.SqlClient
+

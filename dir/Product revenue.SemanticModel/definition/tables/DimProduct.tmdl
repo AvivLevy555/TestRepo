@@ -1,0 +1,626 @@
+table DimProduct
+
+	column ProductKey
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = ProductKey
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column ProductAlternateKey
+		dataType: string
+		sourceProviderType: nvarchar(25)
+		summarizeBy: none
+		sourceColumn: ProductAlternateKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = ProductAlternateKey
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column ProductSubcategoryKey
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		summarizeBy: none
+		sourceColumn: ProductSubcategoryKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = ProductSubcategoryKey
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column WeightUnitMeasureCode
+		dataType: string
+		sourceProviderType: nchar
+		summarizeBy: none
+		sourceColumn: WeightUnitMeasureCode
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = WeightUnitMeasureCode
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column SizeUnitMeasureCode
+		dataType: string
+		sourceProviderType: nchar
+		summarizeBy: none
+		sourceColumn: SizeUnitMeasureCode
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = SizeUnitMeasureCode
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column EnglishProductName
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(50)
+		summarizeBy: none
+		sourceColumn: EnglishProductName
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = EnglishProductName
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column SpanishProductName
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(50)
+		summarizeBy: none
+		sourceColumn: SpanishProductName
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = SpanishProductName
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column FrenchProductName
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(50)
+		summarizeBy: none
+		sourceColumn: FrenchProductName
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = FrenchProductName
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column StandardCost
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		sourceProviderType: money
+		summarizeBy: sum
+		sourceColumn: StandardCost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="CurrencyGeneral" ThousandSeparator="True"><Currency LCID="1033" DisplayName="$ English (United States)" Symbol="$" PositivePattern="0" NegativePattern="0" /></Format>
+
+		annotation DataTypeAtRefresh = Decimal#####not a type
+
+		annotation PBI_NameAtRefresh = StandardCost
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column FinishedGoodsFlag
+		dataType: boolean
+		isNullable: false
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		summarizeBy: none
+		sourceColumn: FinishedGoodsFlag
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Boolean" />
+
+		annotation DataTypeAtRefresh = Boolean#####not a type
+
+		annotation PBI_NameAtRefresh = FinishedGoodsFlag
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column Color
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(15)
+		summarizeBy: none
+		sourceColumn: Color
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = Color
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column SafetyStockLevel
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		summarizeBy: sum
+		sourceColumn: SafetyStockLevel
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = SafetyStockLevel
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column ReorderPoint
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		summarizeBy: sum
+		sourceColumn: ReorderPoint
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = ReorderPoint
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column ListPrice
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		sourceProviderType: money
+		summarizeBy: sum
+		sourceColumn: ListPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="CurrencyGeneral" ThousandSeparator="True"><Currency LCID="1033" DisplayName="$ English (United States)" Symbol="$" PositivePattern="0" NegativePattern="0" /></Format>
+
+		annotation DataTypeAtRefresh = Decimal#####not a type
+
+		annotation PBI_NameAtRefresh = ListPrice
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column Size
+		dataType: string
+		sourceProviderType: nvarchar(50)
+		summarizeBy: none
+		sourceColumn: Size
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = Size
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column SizeRange
+		dataType: string
+		sourceProviderType: nvarchar(50)
+		summarizeBy: none
+		sourceColumn: SizeRange
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = SizeRange
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column Weight
+		dataType: double
+		sourceProviderType: float
+		summarizeBy: sum
+		sourceColumn: Weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="General" />
+
+		annotation DataTypeAtRefresh = Double#####not a type
+
+		annotation PBI_NameAtRefresh = Weight
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column DaysToManufacture
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		summarizeBy: sum
+		sourceColumn: DaysToManufacture
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = DaysToManufacture
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column ProductLine
+		dataType: string
+		sourceProviderType: nchar
+		summarizeBy: none
+		sourceColumn: ProductLine
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = ProductLine
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column DealerPrice
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		sourceProviderType: money
+		summarizeBy: sum
+		sourceColumn: DealerPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="CurrencyGeneral" ThousandSeparator="True"><Currency LCID="1033" DisplayName="$ English (United States)" Symbol="$" PositivePattern="0" NegativePattern="0" /></Format>
+
+		annotation DataTypeAtRefresh = Decimal#####not a type
+
+		annotation PBI_NameAtRefresh = DealerPrice
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column Class
+		dataType: string
+		sourceProviderType: nchar
+		summarizeBy: none
+		sourceColumn: Class
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = Class
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column Style
+		dataType: string
+		sourceProviderType: nchar
+		summarizeBy: none
+		sourceColumn: Style
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = Style
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column ModelName
+		dataType: string
+		sourceProviderType: nvarchar(50)
+		summarizeBy: none
+		sourceColumn: ModelName
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = ModelName
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column EnglishDescription
+		dataType: string
+		sourceProviderType: nvarchar(400)
+		summarizeBy: none
+		sourceColumn: EnglishDescription
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = EnglishDescription
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column FrenchDescription
+		dataType: string
+		sourceProviderType: nvarchar(400)
+		summarizeBy: none
+		sourceColumn: FrenchDescription
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = FrenchDescription
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column ChineseDescription
+		dataType: string
+		sourceProviderType: nvarchar(400)
+		summarizeBy: none
+		sourceColumn: ChineseDescription
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = ChineseDescription
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column ArabicDescription
+		dataType: string
+		sourceProviderType: nvarchar(400)
+		summarizeBy: none
+		sourceColumn: ArabicDescription
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = ArabicDescription
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column HebrewDescription
+		dataType: string
+		sourceProviderType: nvarchar(400)
+		summarizeBy: none
+		sourceColumn: HebrewDescription
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = HebrewDescription
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column ThaiDescription
+		dataType: string
+		sourceProviderType: nvarchar(400)
+		summarizeBy: none
+		sourceColumn: ThaiDescription
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = ThaiDescription
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column GermanDescription
+		dataType: string
+		sourceProviderType: nvarchar(400)
+		summarizeBy: none
+		sourceColumn: GermanDescription
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = GermanDescription
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column JapaneseDescription
+		dataType: string
+		sourceProviderType: nvarchar(400)
+		summarizeBy: none
+		sourceColumn: JapaneseDescription
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = JapaneseDescription
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column TurkishDescription
+		dataType: string
+		sourceProviderType: nvarchar(400)
+		summarizeBy: none
+		sourceColumn: TurkishDescription
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = TurkishDescription
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column StartDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime
+		summarizeBy: none
+		sourceColumn: StartDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="DateTimeGeneralPattern"><DateTimes><DateTime LCID="1033" Group="GeneralDateTimeLong" FormatString="G" /></DateTimes></Format>
+
+		annotation DataTypeAtRefresh = DateTime#####not a type
+
+		annotation PBI_NameAtRefresh = StartDate
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column EndDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime
+		summarizeBy: none
+		sourceColumn: EndDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="DateTimeGeneralPattern"><DateTimes><DateTime LCID="1033" Group="GeneralDateTimeLong" FormatString="G" /></DateTimes></Format>
+
+		annotation DataTypeAtRefresh = DateTime#####not a type
+
+		annotation PBI_NameAtRefresh = EndDate
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column Status
+		dataType: string
+		sourceProviderType: nvarchar(7)
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = Status
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	partition DimProduct-c648138e-22fd-49be-9673-5da14326645b = query
+		mode: directQuery
+		source
+			query =
+				select [$Table].[ProductKey] as [ProductKey],
+				    [$Table].[ProductAlternateKey] as [ProductAlternateKey],
+				    [$Table].[ProductSubcategoryKey] as [ProductSubcategoryKey],
+				    [$Table].[WeightUnitMeasureCode] as [WeightUnitMeasureCode],
+				    [$Table].[SizeUnitMeasureCode] as [SizeUnitMeasureCode],
+				    [$Table].[EnglishProductName] as [EnglishProductName],
+				    [$Table].[SpanishProductName] as [SpanishProductName],
+				    [$Table].[FrenchProductName] as [FrenchProductName],
+				    [$Table].[StandardCost] as [StandardCost],
+				    [$Table].[FinishedGoodsFlag] as [FinishedGoodsFlag],
+				    [$Table].[Color] as [Color],
+				    [$Table].[SafetyStockLevel] as [SafetyStockLevel],
+				    [$Table].[ReorderPoint] as [ReorderPoint],
+				    [$Table].[ListPrice] as [ListPrice],
+				    [$Table].[Size] as [Size],
+				    [$Table].[SizeRange] as [SizeRange],
+				    [$Table].[Weight] as [Weight],
+				    [$Table].[DaysToManufacture] as [DaysToManufacture],
+				    [$Table].[ProductLine] as [ProductLine],
+				    [$Table].[DealerPrice] as [DealerPrice],
+				    [$Table].[Class] as [Class],
+				    [$Table].[Style] as [Style],
+				    [$Table].[ModelName] as [ModelName],
+				    [$Table].[LargePhoto] as [LargePhoto],
+				    [$Table].[EnglishDescription] as [EnglishDescription],
+				    [$Table].[FrenchDescription] as [FrenchDescription],
+				    [$Table].[ChineseDescription] as [ChineseDescription],
+				    [$Table].[ArabicDescription] as [ArabicDescription],
+				    [$Table].[HebrewDescription] as [HebrewDescription],
+				    [$Table].[ThaiDescription] as [ThaiDescription],
+				    [$Table].[GermanDescription] as [GermanDescription],
+				    [$Table].[JapaneseDescription] as [JapaneseDescription],
+				    [$Table].[TurkishDescription] as [TurkishDescription],
+				    [$Table].[StartDate] as [StartDate],
+				    [$Table].[EndDate] as [EndDate],
+				    [$Table].[Status] as [Status]
+				from [dbo].[DimProduct] as [$Table]
+			dataSource: b1375bc4-5131-4575-a9ed-5ed009c48231
+
+	annotation PBI_Id = c0f2aebb-19f9-4d12-91b3-a1577da7b563
+
+	annotation LinkedQueryName = DimProduct
+

@@ -1,0 +1,370 @@
+table DimDate
+
+	column DateKey
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = DateKey
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column FullDateAlternateKey
+		dataType: dateTime
+		isNullable: false
+		formatString: dddd\, mmmm d\, yyyy
+		sourceProviderType: date
+		summarizeBy: none
+		sourceColumn: FullDateAlternateKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation Format = <Format Format="DateTimeGeneralPattern"><DateTimes><DateTime LCID="1033" Group="LongDate" FormatString="dddd, MMMM d, yyyy" /></DateTimes></Format>
+
+		annotation DataTypeAtRefresh = DateTime#####Date
+
+		annotation PBI_NameAtRefresh = FullDateAlternateKey
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column DayNumberOfWeek
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: tinyint
+		summarizeBy: none
+		sourceColumn: DayNumberOfWeek
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = DayNumberOfWeek
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column EnglishDayNameOfWeek
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(10)
+		summarizeBy: none
+		sourceColumn: EnglishDayNameOfWeek
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = EnglishDayNameOfWeek
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column SpanishDayNameOfWeek
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(10)
+		summarizeBy: none
+		sourceColumn: SpanishDayNameOfWeek
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = SpanishDayNameOfWeek
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column FrenchDayNameOfWeek
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(10)
+		summarizeBy: none
+		sourceColumn: FrenchDayNameOfWeek
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = FrenchDayNameOfWeek
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column DayNumberOfMonth
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: tinyint
+		summarizeBy: none
+		sourceColumn: DayNumberOfMonth
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = DayNumberOfMonth
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column DayNumberOfYear
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: smallint
+		summarizeBy: none
+		sourceColumn: DayNumberOfYear
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = DayNumberOfYear
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column WeekNumberOfYear
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: tinyint
+		summarizeBy: none
+		sourceColumn: WeekNumberOfYear
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = WeekNumberOfYear
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column EnglishMonthName
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(10)
+		summarizeBy: none
+		sourceColumn: EnglishMonthName
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = EnglishMonthName
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column SpanishMonthName
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(10)
+		summarizeBy: none
+		sourceColumn: SpanishMonthName
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = SpanishMonthName
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column FrenchMonthName
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(10)
+		summarizeBy: none
+		sourceColumn: FrenchMonthName
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = FrenchMonthName
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column MonthNumberOfYear
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: tinyint
+		summarizeBy: none
+		sourceColumn: MonthNumberOfYear
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = MonthNumberOfYear
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column CalendarQuarter
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: tinyint
+		summarizeBy: none
+		sourceColumn: CalendarQuarter
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = CalendarQuarter
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column CalendarYear
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: smallint
+		summarizeBy: none
+		sourceColumn: CalendarYear
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = CalendarYear
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column CalendarSemester
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: tinyint
+		summarizeBy: none
+		sourceColumn: CalendarSemester
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = CalendarSemester
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column FiscalQuarter
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: tinyint
+		summarizeBy: none
+		sourceColumn: FiscalQuarter
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = FiscalQuarter
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column FiscalYear
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: smallint
+		summarizeBy: none
+		sourceColumn: FiscalYear
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = FiscalYear
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column FiscalSemester
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: tinyint
+		summarizeBy: none
+		sourceColumn: FiscalSemester
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = FiscalSemester
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	partition DimDate-63cedde5-5047-42d5-a8e1-4f71583ea65c = query
+		mode: directQuery
+		source
+			query =
+				select [$Table].[DateKey] as [DateKey],
+				    [$Table].[FullDateAlternateKey] as [FullDateAlternateKey],
+				    [$Table].[DayNumberOfWeek] as [DayNumberOfWeek],
+				    [$Table].[EnglishDayNameOfWeek] as [EnglishDayNameOfWeek],
+				    [$Table].[SpanishDayNameOfWeek] as [SpanishDayNameOfWeek],
+				    [$Table].[FrenchDayNameOfWeek] as [FrenchDayNameOfWeek],
+				    [$Table].[DayNumberOfMonth] as [DayNumberOfMonth],
+				    [$Table].[DayNumberOfYear] as [DayNumberOfYear],
+				    [$Table].[WeekNumberOfYear] as [WeekNumberOfYear],
+				    [$Table].[EnglishMonthName] as [EnglishMonthName],
+				    [$Table].[SpanishMonthName] as [SpanishMonthName],
+				    [$Table].[FrenchMonthName] as [FrenchMonthName],
+				    [$Table].[MonthNumberOfYear] as [MonthNumberOfYear],
+				    [$Table].[CalendarQuarter] as [CalendarQuarter],
+				    [$Table].[CalendarYear] as [CalendarYear],
+				    [$Table].[CalendarSemester] as [CalendarSemester],
+				    [$Table].[FiscalQuarter] as [FiscalQuarter],
+				    [$Table].[FiscalYear] as [FiscalYear],
+				    [$Table].[FiscalSemester] as [FiscalSemester]
+				from [dbo].[DimDate] as [$Table]
+			dataSource: b1375bc4-5131-4575-a9ed-5ed009c48231
+
+	annotation PBI_Id = 75e9acaa-831b-4ddf-8dc5-a334dba67251
+
+	annotation LinkedQueryName = DimDate
+
