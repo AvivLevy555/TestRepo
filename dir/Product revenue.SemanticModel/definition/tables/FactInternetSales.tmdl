@@ -1,0 +1,497 @@
+table FactInternetSales
+
+	column ProductKey
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = ProductKey
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column OrderDateKey
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		summarizeBy: count
+		sourceColumn: OrderDateKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = OrderDateKey
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column DueDateKey
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		summarizeBy: none
+		sourceColumn: DueDateKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = DueDateKey
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column ShipDateKey
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		summarizeBy: count
+		sourceColumn: ShipDateKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = ShipDateKey
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column CustomerKey
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = CustomerKey
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column PromotionKey
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		summarizeBy: count
+		sourceColumn: PromotionKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = PromotionKey
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column CurrencyKey
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		summarizeBy: count
+		sourceColumn: CurrencyKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = CurrencyKey
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column SalesTerritoryKey
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		summarizeBy: count
+		sourceColumn: SalesTerritoryKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = SalesTerritoryKey
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column SalesOrderNumber
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(20)
+		summarizeBy: none
+		sourceColumn: SalesOrderNumber
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = SalesOrderNumber
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column SalesOrderLineNumber
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: tinyint
+		summarizeBy: sum
+		sourceColumn: SalesOrderLineNumber
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = SalesOrderLineNumber
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column RevisionNumber
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: tinyint
+		summarizeBy: sum
+		sourceColumn: RevisionNumber
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = RevisionNumber
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column OrderQuantity
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: smallint
+		summarizeBy: sum
+		sourceColumn: OrderQuantity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = OrderQuantity
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column UnitPrice
+		dataType: decimal
+		isNullable: false
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		sourceProviderType: money
+		summarizeBy: sum
+		sourceColumn: UnitPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="CurrencyGeneral" ThousandSeparator="True"><Currency LCID="1033" DisplayName="$ English (United States)" Symbol="$" PositivePattern="0" NegativePattern="0" /></Format>
+
+		annotation DataTypeAtRefresh = Decimal#####not a type
+
+		annotation PBI_NameAtRefresh = UnitPrice
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column ExtendedAmount
+		dataType: decimal
+		isNullable: false
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		sourceProviderType: money
+		summarizeBy: sum
+		sourceColumn: ExtendedAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="CurrencyGeneral" ThousandSeparator="True"><Currency LCID="1033" DisplayName="$ English (United States)" Symbol="$" PositivePattern="0" NegativePattern="0" /></Format>
+
+		annotation DataTypeAtRefresh = Decimal#####not a type
+
+		annotation PBI_NameAtRefresh = ExtendedAmount
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column UnitPriceDiscountPct
+		dataType: double
+		isNullable: false
+		sourceProviderType: float
+		summarizeBy: sum
+		sourceColumn: UnitPriceDiscountPct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="General" />
+
+		annotation DataTypeAtRefresh = Double#####not a type
+
+		annotation PBI_NameAtRefresh = UnitPriceDiscountPct
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column DiscountAmount
+		dataType: double
+		isNullable: false
+		sourceProviderType: float
+		summarizeBy: sum
+		sourceColumn: DiscountAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="General" />
+
+		annotation DataTypeAtRefresh = Double#####not a type
+
+		annotation PBI_NameAtRefresh = DiscountAmount
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column ProductStandardCost
+		dataType: decimal
+		isNullable: false
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		sourceProviderType: money
+		summarizeBy: sum
+		sourceColumn: ProductStandardCost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="CurrencyGeneral" ThousandSeparator="True"><Currency LCID="1033" DisplayName="$ English (United States)" Symbol="$" PositivePattern="0" NegativePattern="0" /></Format>
+
+		annotation DataTypeAtRefresh = Decimal#####not a type
+
+		annotation PBI_NameAtRefresh = ProductStandardCost
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column TotalProductCost
+		dataType: decimal
+		isNullable: false
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		sourceProviderType: money
+		summarizeBy: sum
+		sourceColumn: TotalProductCost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="CurrencyGeneral" ThousandSeparator="True"><Currency LCID="1033" DisplayName="$ English (United States)" Symbol="$" PositivePattern="0" NegativePattern="0" /></Format>
+
+		annotation DataTypeAtRefresh = Decimal#####not a type
+
+		annotation PBI_NameAtRefresh = TotalProductCost
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column SalesAmount
+		dataType: decimal
+		isNullable: false
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		sourceProviderType: money
+		summarizeBy: sum
+		sourceColumn: SalesAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="CurrencyGeneral" ThousandSeparator="True"><Currency LCID="1033" DisplayName="$ English (United States)" Symbol="$" PositivePattern="0" NegativePattern="0" /></Format>
+
+		annotation DataTypeAtRefresh = Decimal#####not a type
+
+		annotation PBI_NameAtRefresh = SalesAmount
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column TaxAmt
+		dataType: decimal
+		isNullable: false
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		sourceProviderType: money
+		summarizeBy: sum
+		sourceColumn: TaxAmt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="CurrencyGeneral" ThousandSeparator="True"><Currency LCID="1033" DisplayName="$ English (United States)" Symbol="$" PositivePattern="0" NegativePattern="0" /></Format>
+
+		annotation DataTypeAtRefresh = Decimal#####not a type
+
+		annotation PBI_NameAtRefresh = TaxAmt
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column Freight
+		dataType: decimal
+		isNullable: false
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		sourceProviderType: money
+		summarizeBy: sum
+		sourceColumn: Freight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="CurrencyGeneral" ThousandSeparator="True"><Currency LCID="1033" DisplayName="$ English (United States)" Symbol="$" PositivePattern="0" NegativePattern="0" /></Format>
+
+		annotation DataTypeAtRefresh = Decimal#####not a type
+
+		annotation PBI_NameAtRefresh = Freight
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column CarrierTrackingNumber
+		dataType: string
+		sourceProviderType: nvarchar(25)
+		summarizeBy: none
+		sourceColumn: CarrierTrackingNumber
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = CarrierTrackingNumber
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column CustomerPONumber
+		dataType: string
+		sourceProviderType: nvarchar(25)
+		summarizeBy: none
+		sourceColumn: CustomerPONumber
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = CustomerPONumber
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column OrderDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime
+		summarizeBy: none
+		sourceColumn: OrderDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="DateTimeGeneralPattern"><DateTimes><DateTime LCID="1033" Group="GeneralDateTimeLong" FormatString="G" /></DateTimes></Format>
+
+		annotation DataTypeAtRefresh = DateTime#####not a type
+
+		annotation PBI_NameAtRefresh = OrderDate
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column DueDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime
+		summarizeBy: none
+		sourceColumn: DueDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="DateTimeGeneralPattern"><DateTimes><DateTime LCID="1033" Group="GeneralDateTimeLong" FormatString="G" /></DateTimes></Format>
+
+		annotation DataTypeAtRefresh = DateTime#####not a type
+
+		annotation PBI_NameAtRefresh = DueDate
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column ShipDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime
+		summarizeBy: none
+		sourceColumn: ShipDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="DateTimeGeneralPattern"><DateTimes><DateTime LCID="1033" Group="GeneralDateTimeLong" FormatString="G" /></DateTimes></Format>
+
+		annotation DataTypeAtRefresh = DateTime#####not a type
+
+		annotation PBI_NameAtRefresh = ShipDate
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	partition FactInternetSales-51bee445-2626-467a-bfb2-fc8e11d0c32f = query
+		mode: directQuery
+		source
+			query =
+				select [$Table].[ProductKey] as [ProductKey],
+				    [$Table].[OrderDateKey] as [OrderDateKey],
+				    [$Table].[DueDateKey] as [DueDateKey],
+				    [$Table].[ShipDateKey] as [ShipDateKey],
+				    [$Table].[CustomerKey] as [CustomerKey],
+				    [$Table].[PromotionKey] as [PromotionKey],
+				    [$Table].[CurrencyKey] as [CurrencyKey],
+				    [$Table].[SalesTerritoryKey] as [SalesTerritoryKey],
+				    [$Table].[SalesOrderNumber] as [SalesOrderNumber],
+				    [$Table].[SalesOrderLineNumber] as [SalesOrderLineNumber],
+				    [$Table].[RevisionNumber] as [RevisionNumber],
+				    [$Table].[OrderQuantity] as [OrderQuantity],
+				    [$Table].[UnitPrice] as [UnitPrice],
+				    [$Table].[ExtendedAmount] as [ExtendedAmount],
+				    [$Table].[UnitPriceDiscountPct] as [UnitPriceDiscountPct],
+				    [$Table].[DiscountAmount] as [DiscountAmount],
+				    [$Table].[ProductStandardCost] as [ProductStandardCost],
+				    [$Table].[TotalProductCost] as [TotalProductCost],
+				    [$Table].[SalesAmount] as [SalesAmount],
+				    [$Table].[TaxAmt] as [TaxAmt],
+				    [$Table].[Freight] as [Freight],
+				    [$Table].[CarrierTrackingNumber] as [CarrierTrackingNumber],
+				    [$Table].[CustomerPONumber] as [CustomerPONumber],
+				    [$Table].[OrderDate] as [OrderDate],
+				    [$Table].[DueDate] as [DueDate],
+				    [$Table].[ShipDate] as [ShipDate]
+				from [dbo].[FactInternetSales] as [$Table]
+			dataSource: b1375bc4-5131-4575-a9ed-5ed009c48231
+
+	annotation PBI_Id = 5fa80369-68f4-4f3c-8090-93b17d1c5604
+
+	annotation LinkedQueryName = FactInternetSales
+

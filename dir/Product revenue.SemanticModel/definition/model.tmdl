@@ -1,0 +1,17 @@
+model Model
+	culture: en-US
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.73.5586.661 (19.09)
+
+ref table DimCustomer
+ref table DimDate
+ref table DimProduct
+ref table DimProductCategory
+ref table DimProductSubcategory
+ref table FactInternetSales
+ref table DimGeography
+
+ref cultureInfo en-US
+

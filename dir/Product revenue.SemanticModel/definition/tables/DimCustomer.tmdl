@@ -1,0 +1,521 @@
+table DimCustomer
+
+	column CustomerKey
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = CustomerKey
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column GeographyKey
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		summarizeBy: none
+		sourceColumn: GeographyKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = GeographyKey
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column CustomerAlternateKey
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(15)
+		summarizeBy: none
+		sourceColumn: CustomerAlternateKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = CustomerAlternateKey
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column Title
+		dataType: string
+		sourceProviderType: nvarchar(8)
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = Title
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column FirstName
+		dataType: string
+		sourceProviderType: nvarchar(50)
+		summarizeBy: none
+		sourceColumn: FirstName
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = FirstName
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column MiddleName
+		dataType: string
+		sourceProviderType: nvarchar(50)
+		summarizeBy: none
+		sourceColumn: MiddleName
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = MiddleName
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column LastName
+		dataType: string
+		sourceProviderType: nvarchar(50)
+		summarizeBy: none
+		sourceColumn: LastName
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = LastName
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column NameStyle
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		summarizeBy: none
+		sourceColumn: NameStyle
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Boolean" />
+
+		annotation DataTypeAtRefresh = Boolean#####not a type
+
+		annotation PBI_NameAtRefresh = NameStyle
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column BirthDate
+		dataType: dateTime
+		formatString: dddd\, mmmm d\, yyyy
+		sourceProviderType: date
+		summarizeBy: none
+		sourceColumn: BirthDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation Format = <Format Format="DateTimeGeneralPattern"><DateTimes><DateTime LCID="1033" Group="LongDate" FormatString="dddd, MMMM d, yyyy" /></DateTimes></Format>
+
+		annotation DataTypeAtRefresh = DateTime#####Date
+
+		annotation PBI_NameAtRefresh = BirthDate
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column MaritalStatus
+		dataType: string
+		sourceProviderType: nchar
+		summarizeBy: none
+		sourceColumn: MaritalStatus
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = MaritalStatus
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column Suffix
+		dataType: string
+		sourceProviderType: nvarchar(10)
+		summarizeBy: none
+		sourceColumn: Suffix
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = Suffix
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column Gender
+		dataType: string
+		sourceProviderType: nvarchar(1)
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = Gender
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column EmailAddress
+		dataType: string
+		sourceProviderType: nvarchar(50)
+		summarizeBy: none
+		sourceColumn: EmailAddress
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = EmailAddress
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column YearlyIncome
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		sourceProviderType: money
+		summarizeBy: sum
+		sourceColumn: YearlyIncome
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="CurrencyGeneral" ThousandSeparator="True"><Currency LCID="1033" DisplayName="$ English (United States)" Symbol="$" PositivePattern="0" NegativePattern="0" /></Format>
+
+		annotation DataTypeAtRefresh = Decimal#####not a type
+
+		annotation PBI_NameAtRefresh = YearlyIncome
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column TotalChildren
+		dataType: int64
+		formatString: 0
+		sourceProviderType: tinyint
+		summarizeBy: sum
+		sourceColumn: TotalChildren
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = TotalChildren
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column NumberChildrenAtHome
+		dataType: int64
+		formatString: 0
+		sourceProviderType: tinyint
+		summarizeBy: sum
+		sourceColumn: NumberChildrenAtHome
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = NumberChildrenAtHome
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column EnglishEducation
+		dataType: string
+		sourceProviderType: nvarchar(40)
+		summarizeBy: none
+		sourceColumn: EnglishEducation
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = EnglishEducation
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column SpanishEducation
+		dataType: string
+		sourceProviderType: nvarchar(40)
+		summarizeBy: none
+		sourceColumn: SpanishEducation
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = SpanishEducation
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column FrenchEducation
+		dataType: string
+		sourceProviderType: nvarchar(40)
+		summarizeBy: none
+		sourceColumn: FrenchEducation
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = FrenchEducation
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column EnglishOccupation
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		summarizeBy: none
+		sourceColumn: EnglishOccupation
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = EnglishOccupation
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column SpanishOccupation
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		summarizeBy: none
+		sourceColumn: SpanishOccupation
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = SpanishOccupation
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column FrenchOccupation
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		summarizeBy: none
+		sourceColumn: FrenchOccupation
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = FrenchOccupation
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column HouseOwnerFlag
+		dataType: string
+		sourceProviderType: nchar
+		summarizeBy: none
+		sourceColumn: HouseOwnerFlag
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = HouseOwnerFlag
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column NumberCarsOwned
+		dataType: int64
+		formatString: 0
+		sourceProviderType: tinyint
+		summarizeBy: sum
+		sourceColumn: NumberCarsOwned
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = NumberCarsOwned
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column AddressLine1
+		dataType: string
+		sourceProviderType: nvarchar(120)
+		summarizeBy: none
+		sourceColumn: AddressLine1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = AddressLine1
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column AddressLine2
+		dataType: string
+		sourceProviderType: nvarchar(120)
+		summarizeBy: none
+		sourceColumn: AddressLine2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = AddressLine2
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column Phone
+		dataType: string
+		sourceProviderType: nvarchar(20)
+		summarizeBy: none
+		sourceColumn: Phone
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = Phone
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column DateFirstPurchase
+		dataType: dateTime
+		formatString: dddd\, mmmm d\, yyyy
+		sourceProviderType: date
+		summarizeBy: none
+		sourceColumn: DateFirstPurchase
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation Format = <Format Format="DateTimeGeneralPattern"><DateTimes><DateTime LCID="1033" Group="LongDate" FormatString="dddd, MMMM d, yyyy" /></DateTimes></Format>
+
+		annotation DataTypeAtRefresh = DateTime#####Date
+
+		annotation PBI_NameAtRefresh = DateFirstPurchase
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column CommuteDistance
+		dataType: string
+		sourceProviderType: nvarchar(15)
+		summarizeBy: none
+		sourceColumn: CommuteDistance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = CommuteDistance
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	partition DimCustomer-1ecd399c-696d-4c71-b923-779f651e3ab7 = query
+		mode: directQuery
+		source
+			query =
+				select [$Table].[CustomerKey] as [CustomerKey],
+				    [$Table].[GeographyKey] as [GeographyKey],
+				    [$Table].[CustomerAlternateKey] as [CustomerAlternateKey],
+				    [$Table].[Title] as [Title],
+				    [$Table].[FirstName] as [FirstName],
+				    [$Table].[MiddleName] as [MiddleName],
+				    [$Table].[LastName] as [LastName],
+				    [$Table].[NameStyle] as [NameStyle],
+				    [$Table].[BirthDate] as [BirthDate],
+				    [$Table].[MaritalStatus] as [MaritalStatus],
+				    [$Table].[Suffix] as [Suffix],
+				    [$Table].[Gender] as [Gender],
+				    [$Table].[EmailAddress] as [EmailAddress],
+				    [$Table].[YearlyIncome] as [YearlyIncome],
+				    [$Table].[TotalChildren] as [TotalChildren],
+				    [$Table].[NumberChildrenAtHome] as [NumberChildrenAtHome],
+				    [$Table].[EnglishEducation] as [EnglishEducation],
+				    [$Table].[SpanishEducation] as [SpanishEducation],
+				    [$Table].[FrenchEducation] as [FrenchEducation],
+				    [$Table].[EnglishOccupation] as [EnglishOccupation],
+				    [$Table].[SpanishOccupation] as [SpanishOccupation],
+				    [$Table].[FrenchOccupation] as [FrenchOccupation],
+				    [$Table].[HouseOwnerFlag] as [HouseOwnerFlag],
+				    [$Table].[NumberCarsOwned] as [NumberCarsOwned],
+				    [$Table].[AddressLine1] as [AddressLine1],
+				    [$Table].[AddressLine2] as [AddressLine2],
+				    [$Table].[Phone] as [Phone],
+				    [$Table].[DateFirstPurchase] as [DateFirstPurchase],
+				    [$Table].[CommuteDistance] as [CommuteDistance]
+				from [dbo].[DimCustomer] as [$Table]
+			dataSource: b1375bc4-5131-4575-a9ed-5ed009c48231
+
+	annotation PBI_Id = 002e4032-9cdc-4823-9cbe-f52521bb395f
+
+	annotation LinkedQueryName = DimCustomer
+

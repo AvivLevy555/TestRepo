@@ -1,0 +1,122 @@
+table DimProductSubcategory
+
+	column ProductSubcategoryKey
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		summarizeBy: none
+		sourceColumn: ProductSubcategoryKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = ProductSubcategoryKey
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column ProductSubcategoryAlternateKey
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		summarizeBy: count
+		sourceColumn: ProductSubcategoryAlternateKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = ProductSubcategoryAlternateKey
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column EnglishProductSubcategoryName
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(50)
+		summarizeBy: none
+		sourceColumn: EnglishProductSubcategoryName
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = EnglishProductSubcategoryName
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column SpanishProductSubcategoryName
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(50)
+		summarizeBy: none
+		sourceColumn: SpanishProductSubcategoryName
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = SpanishProductSubcategoryName
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column FrenchProductSubcategoryName
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(50)
+		summarizeBy: none
+		sourceColumn: FrenchProductSubcategoryName
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+		annotation PBI_NameAtRefresh = FrenchProductSubcategoryName
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	column ProductCategoryKey
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		summarizeBy: none
+		sourceColumn: ProductCategoryKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+		annotation PBI_NameAtRefresh = ProductCategoryKey
+
+		annotation PBI_WasHiddenAtRefresh = False
+
+	partition DimProductSubcategory-0544f4e2-a7cc-4c48-80a2-209009334865 = query
+		mode: directQuery
+		source
+			query =
+				select [$Table].[ProductSubcategoryKey] as [ProductSubcategoryKey],
+				    [$Table].[ProductSubcategoryAlternateKey] as [ProductSubcategoryAlternateKey],
+				    [$Table].[EnglishProductSubcategoryName] as [EnglishProductSubcategoryName],
+				    [$Table].[SpanishProductSubcategoryName] as [SpanishProductSubcategoryName],
+				    [$Table].[FrenchProductSubcategoryName] as [FrenchProductSubcategoryName],
+				    [$Table].[ProductCategoryKey] as [ProductCategoryKey]
+				from [dbo].[DimProductSubcategory] as [$Table]
+			dataSource: b1375bc4-5131-4575-a9ed-5ed009c48231
+
+	annotation PBI_Id = ace641da-cc66-4c42-b0d3-aaecb646e226
+
+	annotation LinkedQueryName = DimProductSubcategory
+
