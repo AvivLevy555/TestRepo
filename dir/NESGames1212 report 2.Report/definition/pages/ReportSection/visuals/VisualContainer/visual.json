@@ -1,0 +1,70 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "VisualContainer",
+  "position": {
+    "x": 1,
+    "y": 35,
+    "z": 0,
+    "height": 318,
+    "width": 292
+  },
+  "visual": {
+    "visualType": "donutChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NES Games"
+                    }
+                  },
+                  "Property": "Category"
+                }
+              },
+              "queryRef": "NES Games.Category",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NES Games"
+                    }
+                  },
+                  "Property": "#Games"
+                }
+              },
+              "queryRef": "NES Games.#Games"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "NES Games"
+                  }
+                },
+                "Property": "#Games"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    }
+  }
+}
