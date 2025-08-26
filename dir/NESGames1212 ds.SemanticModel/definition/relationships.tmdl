@@ -1,5 +1,0 @@
-relationship 93924ef9-a6f4-4e9f-be18-b5b7e962f2b9
-	joinOnDateBehavior: datePartOnly
-	fromColumn: 'Version History'.Timestamp
-	toColumn: LocalDateTable_80c23bf5-c966-4a5a-859e-8e1c97220560.Date
-
