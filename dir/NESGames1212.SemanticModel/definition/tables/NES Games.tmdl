@@ -1,0 +1,105 @@
+table 'NES Games'
+	lineageTag: 29a92569-063a-45ea-a865-0f94fad21880
+
+	measure #Games = COUNTROWS('NES Games')
+		formatString: 0
+		lineageTag: b1a912bf-0361-410d-bc76-2d8610d51ed8
+
+	column System
+		dataType: string
+		lineageTag: e7b58198-b60a-4190-ba07-6f32ed980cbb
+		summarizeBy: none
+		sourceColumn: System
+
+	column Title
+		dataType: string
+		lineageTag: f6ac4128-88df-4f09-8948-e3f9b887a162
+		summarizeBy: none
+		sourceColumn: Title
+
+	column Category
+		dataType: string
+		lineageTag: ad977fed-a76d-4fd4-a53c-cdbdc11c9463
+		summarizeBy: none
+		sourceColumn: Category
+
+	column Subcategory
+		dataType: string
+		lineageTag: 41dc6c89-445d-42de-80e6-4e9f96e3be93
+		summarizeBy: none
+		sourceColumn: Subcategory
+
+	column Tag
+		dataType: string
+		lineageTag: 79c7729a-e0d8-48f2-a235-02ce0558f1de
+		summarizeBy: none
+		sourceColumn: Tag
+
+	column 'Release Date'
+		dataType: string
+		lineageTag: feb24c04-892f-4b90-b1bf-f44bd39b4046
+		summarizeBy: none
+		sourceColumn: Release Date
+
+	column 'Release Year'
+		dataType: int64
+		formatString: 0
+		lineageTag: c83b3670-2da8-41ac-b14e-361ff26284cc
+		summarizeBy: none
+		sourceColumn: Release Year
+
+		annotation SummarizationSetBy = User
+
+	column 'Number of Players'
+		dataType: string
+		lineageTag: ae906ad1-7711-4d27-abe6-cfe686b42da4
+		summarizeBy: none
+		sourceColumn: Number of Players
+
+	column 'Game Maker'
+		dataType: string
+		lineageTag: 2de1589d-c2a4-4c40-afb1-71674f0bff6f
+		summarizeBy: none
+		sourceColumn: Game Maker
+
+	column Rating
+		dataType: string
+		lineageTag: d06d3b77-0d3d-432e-8d2f-c5892d271539
+		summarizeBy: none
+		sourceColumn: Rating
+
+	hierarchy 'Category Hierarchy'
+		lineageTag: 00f9abbd-40f7-4cef-a527-e60b23ae03e8
+
+		level Category
+			lineageTag: 38fbadc1-6f3e-4bae-87fc-720733afb3ab
+			column: Category
+
+		level Subcategory
+			lineageTag: 29dae127-c86e-47fb-a0aa-8fe458efb124
+			column: Subcategory
+
+	partition 'NES Games-809c1bb7-ab67-4cf9-ad4b-a8c626194fb6' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromColumns({Lines.FromBinary(File.Contents("C:\Data\OneDrive - Microsoft\Databanks\Games\Sources\nes.txt"), null, null, 1252)}),
+				    #"Split Column by Delimiter" = Table.SplitColumn(Source,"Column1",Splitter.SplitTextByDelimiter(",", QuoteStyle.Csv),{"Column1.1", "Column1.2", "Column1.3", "Column1.4", "Column1.5", "Column1.6", "Column1.7"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Split Column by Delimiter",{{"Column1.1", type text}, {"Column1.2", type text}, {"Column1.3", type text}, {"Column1.4", type text}, {"Column1.5", type text}, {"Column1.6", type text}, {"Column1.7", type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type"),
+				    #"Removed Blank Rows" = Table.SelectRows(#"Promoted Headers", each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {"", null}))),
+				    #"Split Column by Delimiter1" = Table.SplitColumn(#"Removed Blank Rows","Category",Splitter.SplitTextByEachDelimiter({"("}, QuoteStyle.None, true),{"Category.1", "Category.2"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Split Column by Delimiter1",{{"Category.1", type text}, {"Category.2", type text}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Changed Type1",")","",Replacer.ReplaceText,{"Category.2"}),
+				    #"Trimmed Text" = Table.TransformColumns(#"Replaced Value",{{"Category.1", Text.Trim}}),
+				    #"Split Column by Delimiter2" = Table.SplitColumn(#"Trimmed Text","Category.1",Splitter.SplitTextByEachDelimiter({"/"}, QuoteStyle.None, false),{"Category.1.1", "Category.1.2"}),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Split Column by Delimiter2",{{"Category.1.1", type text}, {"Category.1.2", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type2",{{"Category.1.1", "Category"}, {"Category.1.2", "Subcategory"}, {"Category.2", "Tag"}, {"No of Plyrs", "Number of Players"}, {"Sys", "System"}}),
+				    #"Added Custom" = Table.AddColumn(#"Renamed Columns", "Release Year", each Number.FromText("19" & Text.End([Release Date], 2))),
+				    #"Reordered Columns" = Table.ReorderColumns(#"Added Custom",{"System", "Title", "Category", "Subcategory", "Tag", "Release Date", "Release Year", "Number of Players", "Game Maker", "Rating"}),
+				    #"Changed Type3" = Table.TransformColumnTypes(#"Reordered Columns",{{"Release Year", Int64.Type}})
+				in
+				    #"Changed Type3"
+
+	annotation PBI_ResultType = Table
+
